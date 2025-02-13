@@ -18,6 +18,7 @@ movies = [
     },
 ]
 
+
 def show_movies():
     st.write('Movies List:')
 

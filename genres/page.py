@@ -18,6 +18,7 @@ genres = [
     },
 ]
 
+
 def show_genres():
     st.write('Genres List:')
 

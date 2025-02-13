@@ -18,6 +18,7 @@ reviews = [
     },
 ]
 
+
 def show_reviews():
     st.write('Reviews List:')
 
