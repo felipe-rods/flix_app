@@ -12,10 +12,10 @@ class Auth:
             'username': username,
             'password': password
         }
-        auth_response = requests(
+        auth_response = requests.post(
             self.__auth_url,
             data=auth_payload
         )
-        if auth_payload.status_code == 200:
+        if auth_response.status_code == 200:
             return auth_response.json()
         return {'error': f'Authentication error. Status code: {auth_response.status_code}.'}
