@@ -13,4 +13,4 @@ class GenreService:
         genre = dict(
             name=name,
         )
-        return self.genre_repository.create_genre()
+        return self.genre_repository.create_genre(genre)
