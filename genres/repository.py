@@ -22,4 +22,17 @@ class GenreRepository:
         if response.status_code == 401:
             logout()
             return None
-        raise Exception(f'Error when requesting API data. Status code: {response.status_code}.')
+        raise Exception(f'Failed to get API data. Status code: {response.status_code}.')
+
+    def create_genre(self, genre):
+        response = requests.post(
+            self.__genres_url,
+            headers=self.__headers,
+            data=genre
+        )
+        if response.status_code == 201:
+            return response.json()
+        if response.status_code == 401:
+            logout()
+            return None
+        raise Exception(f'Failed to post API data. Status code: {response.status_code}.')
