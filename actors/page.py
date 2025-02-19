@@ -8,11 +8,12 @@ from datetime import datetime
 def show_actors():
     actor_service = ActorService()
     actors = actor_service.get_actors()
+
     if actors:
         st.title('Actors/Actresses list:')
-        actors_pd = pd.json_normalize(actors)
+        actors_df = pd.json_normalize(actors)
         AgGrid(
-            data=actors_pd,
+            data=actors_df,
             key='actors_grid',
         )
     else:
