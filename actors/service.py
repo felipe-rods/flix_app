@@ -2,7 +2,7 @@ from actors.repository import ActorRepository
 
 
 class ActorService:
-    
+
     def __init__(self):
         self.actor_repository = ActorRepository()
 

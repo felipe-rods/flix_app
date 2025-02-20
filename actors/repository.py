@@ -10,7 +10,7 @@ class ActorRepository:
         self.__headers = {
             'Authorization': f'Bearer {st.session_state.token}'
         }
-    
+
     def get_actors(self):
         response = requests.get(
             self.__actors_url,

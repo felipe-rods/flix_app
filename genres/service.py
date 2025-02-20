@@ -8,7 +8,7 @@ class GenreService:
 
     def get_genres(self):
         return self.genre_repository.get_genres()
-    
+
     def create_genre(self, name):
         genre = dict(
             name=name,

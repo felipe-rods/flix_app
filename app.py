@@ -1,6 +1,7 @@
 import streamlit as st
 from movies.page import show_movies
 from genres.page import show_genres
+from home.page import show_home
 from login.page import show_login
 from actors.page import show_actors
 from reviews.page import show_reviews
@@ -18,7 +19,7 @@ def main():
         )
 
         if menu_option == 'Home':
-            st.write('Home')
+            show_home()
 
         if menu_option == 'Movies':
             show_movies()

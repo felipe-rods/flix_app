@@ -15,7 +15,7 @@ def show_movies():
         st.write('Movies List:')
         movies_df = pd.json_normalize(movies)
         movies_df = movies_df.drop(columns=['actors', 'genre.id'])
-        
+
         AgGrid(
             data=movies_df,
             key='movies_grid',
@@ -38,7 +38,7 @@ def show_movies():
     genres = genre_service.get_genres()
     genre_names = {genre['name']: genre['id'] for genre in genres}
     selected_genre_name = st.selectbox('Genre', list(genre_names.keys()))
- 
+
     actor_service = ActorService()
     actors = actor_service.get_actors()
     actor_names = {actor['name']: actor['id'] for actor in actors}
@@ -46,7 +46,7 @@ def show_movies():
     selected_actors_ids = [actor_names[name] for name in selected_actors_names]
 
     synopsis = st.text_area('Synopsis')
-    
+
     if st.button('Register'):
         new_movie = movie_service.create_movie(
             title=title,

@@ -17,7 +17,7 @@ def show_genres():
         )
     else:
         st.warning('No genre found.')
-    
+
     st.title('New Genre:')
     name = st.text_input('Genre')
     if st.button('Register'):
